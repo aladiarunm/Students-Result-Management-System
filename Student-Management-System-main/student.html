@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, Email, or Degree">
+        
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>GPA</th>
+                    <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        function search(){
+        var input, filter, table, tr, td, i, txtValue,txtValue1,txtValue2;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tbody");
+        tr = table.getElementsByTagName("tr");
+
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            td1 = tr[i].getElementsByTagName("td")[2];
+            td2 = tr[i].getElementsByTagName("td")[5];
+            if (td || td1 || td2) {
+            txtValue = td.textContent || td.innerText;
+            txtValue1 = td1.textContent || td1.innerText;
+            txtValue2 = td2.textContent || td2.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue1.toUpperCase().indexOf(filter) > -1 || txtValue2.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+            }
+        }
+        }
+        function fetchStudents() {
+            fetch('fetch_students.php')
+                .then(response => response.json())
+                .then(data => {
+                    const table = document.getElementById('tbody');
+                    table.innerHTML = ""; 
+
+                    data.forEach(student => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${student.id}</td>
+                            <td>${student.name}</td>
+                            <td>${student.email}</td>
+                            <td>${student.age}</td>
+                            <td>${student.grade}</td>
+                            <td>${student.degree}</td>
+                        `;
+                        table.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        window.onload = fetchStudents;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="role-selection">
+        <h1>Welcome to Student Result  Management System</h1>
+        <p>Select Your Role:</p>
+        <button onclick="verifyAdmin()">Admin</button>
+        <button onclick="window.location.href='student.html'">Student</button>
+    </div>
+
+    <script>
+        function verifyAdmin() {
+            let password = prompt("Enter Admin Password:");
+            if (password) {
+                fetch("verify_admin.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: "password=" + encodeURIComponent(password)
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === "success") {
+                        window.location.href = "admin.html"; // Redirect if correct
+                    } else {
+                        alert("Incorrect password!");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+
+</body>
+</html>

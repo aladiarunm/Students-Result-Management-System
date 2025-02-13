@@ -1,0 +1,239 @@
+/*body{
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+a:hover{
+    cursor: pointer;
+}
+
+.container{
+    margin: 20px 50px;
+}
+
+.input-container{
+   
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap:30px;
+    padding: 0;
+
+}
+
+.degree{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-container input{
+    background-color: black;
+    border: 1px solid white;
+    height: 40px;
+    padding-left: 10px;
+    width: auto;
+    color: white;
+}
+
+.icons{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap:10px
+}
+.table{
+    border: 1px solid white;
+    width:100%;
+    border-spacing: 0;
+    min-height: 200px;
+    overflow-x: auto;
+}
+
+th,td{
+    text-align: center;
+}
+th{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    padding: 10px;
+}
+td{
+    padding: 10px;
+    border-right: 1px solid white;
+}
+tbody{
+    height: auto;
+}
+
+.search{
+    width:100%;
+    background-color: black;
+    border: 1px solid white;
+    height: 40px;
+    padding: 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    width:100%;
+    padding-left: 10px;
+    color: white;
+}
+
+
+.button {
+    height: 40px;
+    width: 400px;
+    margin: 20px;
+    margin-left: 0;
+    margin-top: 30px;
+}*/
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🔹 Role Selection Page */
+.role-selection {
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+}
+
+.role-selection h1 {
+    margin-bottom: 10px;
+}
+
+.role-selection p {
+    font-size: 18px;
+    color: #555;
+}
+
+.role-selection button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.role-selection button:hover {
+    background-color: #0056b3;
+}
+
+/* 🔹 Container for Admin & Student Dashboard */
+.container {
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.input-container input, .search {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #218838;
+}
+
+/* 🔹 Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 🔹 Action Buttons */
+.icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icons a {
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    color: red;
+}
+
+/* 🔹 Student Page (Read-Only) */
+.student-dashboard {
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+}
+
+.student-dashboard h1 {
+    color: #333;
+}
+
+.search {
+    background-color: #f1f1f1;
+}
