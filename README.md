@@ -64,11 +64,15 @@ CREATE TABLE students (
     grade VARCHAR(10) NOT NULL,
     degree VARCHAR(255) NOT NULL
 );
+
+
 3️⃣ Configure the Project
 Download the project files and place them inside:
 XAMPP: C:\xampp\htdocs\student-management-system\
 WAMP: C:\wamp\www\student-management-system\
 LAMP (Linux): /var/www/html/student-management-system/
+
+
 Configure the database connection in db.php:
 php
 Copy
@@ -104,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 4️⃣ Run the Project
 Open your web browser.
 Go to:
@@ -127,6 +132,7 @@ Logout button removes session and redirects to index.html.
 Displays all student records.
 Search feature for easy filtering.
 No edit or delete options.
+
 🔑 Logout Functionality
 To log out of the Admin Panel, click the Logout button.
 Alternatively, visit:
@@ -141,8 +147,12 @@ This destroys the session and redirects back to the home page.
 🔑 Store Admin passwords securely using hashed values in MySQL.
 📊 Export student data as a CSV file.
 📩 Email notifications when a student is added/updated.
+
+
+
 📝 License
 This project is open-source under the MIT License.
+
 
 🎉 Thank You for Using the Student Management System!
 markdown
