@@ -35,7 +35,21 @@ This system features **role-based authentication**, allowing **admins** to add, 
 ---
 
 ## **📂 Project Structure**
-📁 student-management-system │── 📄 index.html # Role selection page (Admin/Student) │── 📄 admin.html # Admin dashboard (Manage students) │── 📄 student.html # Student dashboard (View-only mode) │── 📄 style.css # Styling for the project │── 📄 script.js # JavaScript functions (Admin) │── 📄 db.php # Database connection file │── 📄 fetch_students.php # Fetch all students from database │── 📄 add_student.php # Add a new student │── 📄 update_student.php # Update student details │── 📄 delete_student.php # Delete student record │── 📄 get_student.php # Fetch a single student's details for editing │── 📄 verify_admin.php # Admin password verification │── 📄 logout.php # Admin logout script │── 📄 README.md # Project documentation
+📁 student-management-system 
+│── 📄 index.html # Role selection page (Admin/Student) 
+│── 📄 admin.html # Admin dashboard (Manage students) 
+│── 📄 student.html # Student dashboard (View-only mode) 
+│── 📄 style.css # Styling for the project 
+│── 📄 script.js # JavaScript functions (Admin) 
+│── 📄 db.php # Database connection file 
+│── 📄 fetch_students.php # Fetch all students from database 
+│── 📄 add_student.php # Add a new student 
+│── 📄 update_student.php # Update student details 
+│── 📄 delete_student.php # Delete student record 
+│── 📄 get_student.php # Fetch a single student's details for editing 
+│── 📄 verify_admin.php # Admin password verification 
+│── 📄 logout.php # Admin logout script 
+│── 📄 README.md # Project documentation
 
 ---
 
@@ -54,6 +68,7 @@ Make sure you have the following installed on your system:
 1. Start **Apache** and **MySQL** from XAMPP/WAMP/LAMP.
 2. Open **phpMyAdmin** (`http://localhost/phpmyadmin/`).
 3. Create a new database:
+
    ```sql
    CREATE DATABASE student_db;
 CREATE TABLE students (
@@ -77,6 +92,7 @@ Configure the database connection in db.php:
 php
 Copy
 Edit
+
 <?php
 $servername = "localhost";
 $username = "root";  // Change if needed
@@ -89,6 +105,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 ?>
+
+
 Set the Admin Password in verify_admin.php:
 php
 Copy
@@ -119,6 +137,8 @@ http://localhost/student-management-system/index.html
 Choose a Role:
 Admin: Enter the password (admin123) to access admin.html.
 Student: View records in student.html.
+
+
 🔄 How It Works
 🔑 Admin Login & Authentication
 Clicking Admin asks for a password.
